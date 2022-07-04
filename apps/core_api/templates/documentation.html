@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <title>SCHOOL - API</title>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand " href="#">School- API</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Métodos
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#cadastro">Cadastrar</a>
+                <a class="dropdown-item" href="#editar">Editar</a>
+                <a class="dropdown-item" href="#listar">Listar</a>
+                <a class="dropdown-item" href="#deletar">Deletar</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#busca_personalizada">Busca personalizada</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <br>
+
+      <div class="container" id="cadastro">
+          <h2>Cadastrar - <b class="text-warning">POST</b></h2> 
+          <p> ENDPOINT: <a href="http://127.0.0.1:8000/student/">http://127.0.0.1:8000/student/</a></p>
+      
+        <br>
+        <h3>Head</h3>
+        <table class="table">
+            <thead class="thead-light">
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">KEY</th>
+                <th scope="col">VALUE</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>Content-Type</td>
+                <td>application/json</td>
+              </tr>
+            </tbody>
+        </table>
+        <br>
+
+        <h3>Body (raw-JSON)</h3>
+
+      <table class="table">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Parâmetros</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Obrigatório</th>
+            <th scope="col">Exemplo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>registration (matricula)</td>
+            <td>String</td>
+            <td>False</td>
+            <td>000000</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>first_name</td>
+            <td>String</td>
+            <td>True</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>last_name</td>
+            <td>String</td>
+            <td>True</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th scope="row">4</th>
+            <td>gender</td>
+            <td>String</td>
+            <td>True</td>
+            <td>0 - None
+                1 - Masculino
+                2 - Feminino
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+    </div>
+    <br>
+    <div class="container">
+        <h3>Response</h3>
+        <div class="jumbotron">
+        { <br>
+            "id": 10, <br>
+            "registration": "17625124", <br>
+            "first_name": "teste gender", <br>
+            "last_name": "Silva", <br>
+            "gender": "1", <br>
+            "date": "2022-07-04T22:49:39.824004Z", <br>
+            "is_active": true <br>
+        } <br>
+        </div>
+    </div>
+    <hr>
+
+    <div class="container" id="editar">
+        <h2>Editar - <b class="text-primary">PUT</b></h2> 
+        <p> ENDPOINT: <a href="http://127.0.0.1:8000/student/{id}/">http://127.0.0.1:8000/student/{id}/</a></p>
+      <br>
+
+      <h3>Body (raw-JSON)</h3>
+
+    <table class="table">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Parâmetros</th>
+          <th scope="col">Tipo</th>
+          <th scope="col">Obrigatório</th>
+          <th scope="col">Exemplo</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>registration (matricula)</td>
+          <td>String</td>
+          <td>False</td>
+          <td>000000</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>first_name</td>
+          <td>String</td>
+          <td>True</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>last_name</td>
+          <td>String</td>
+          <td>True</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <th scope="row">4</th>
+          <td>gender</td>
+          <td>String</td>
+          <td>True</td>
+          <td>0 - None
+              1 - Masculino
+              2 - Feminino
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>
+  <br>
+  <div class="container">
+      <h3>Response</h3>
+      <div class="jumbotron">
+      { <br>
+          "id": 10, <br>
+          "registration": "17625124", <br>
+          "first_name": "teste gender", <br>
+          "last_name": "Silva", <br>
+          "gender": "1", <br>
+          "date": "2022-07-04T22:49:39.824004Z", <br>
+          "is_active": true <br>
+      } <br>
+      </div>
+  </div>
+  <hr>
+
+  <div class="container" id="listar">
+    <h2>Listar - <b class="text-success">GET</b></h2> 
+    <p> ENDPOINT: <a href="http://127.0.0.1:8000/student/">http://127.0.0.1:8000/student/</a></p>
+  <br>
+
+<div class="container">
+  <h3>Response</h3>
+  <div class="jumbotron">
+[ <br>
+  { <br>
+      "id": 10, <br>
+      "registration": "17625124", <br>
+      "first_name": "teste gender", <br>
+      "last_name": "Silva", <br>
+      "gender": "1", <br>
+      "date": "2022-07-04T22:49:39.824004Z", <br>
+      "is_active": true <br>
+  }, <br>
+
+  { <br>
+    "id": 10, <br>
+    "registration": "17625124", <br>
+    "first_name": "teste gender", <br>
+    "last_name": "Silva", <br>
+    "gender": "1", <br>
+    "date": "2022-07-04T22:49:39.824004Z", <br>
+    "is_active": true <br>
+}, <br>
+
+{ <br>
+    "id": 10, <br>
+    "registration": "17625124", <br>
+    "first_name": "teste gender", <br>
+    "last_name": "Silva", <br>
+    "gender": "1", <br>
+    "date": "2022-07-04T22:49:39.824004Z", <br>
+    "is_active": true <br>
+}, <br>
+
+{ <br>
+    "id": 10, <br>
+    "registration": "17625124", <br>
+    "first_name": "teste gender", <br>
+    "last_name": "Silva", <br>
+    "gender": "1", <br>
+    "date": "2022-07-04T22:49:39.824004Z", <br>
+    "is_active": true <br>
+} <br>
+]
+  </div>
+
+  <hr>
+  <div class="container" id="deletar">
+    <h2>Deletar - <b class="text-danger">DELETE</b></h2> 
+    <p> ENDPOINT: <a href="http://127.0.0.1:8000/student/{id}/">http://127.0.0.1:8000/student/{id}/</a></p>
+  <br>
+
+</div>
+<br>
+<div class="container">
+  <h3>Response</h3>
+  <div class="jumbotron">
+    200 OK - STATUS CODE
+  </div>
+</div>
+<hr>
+
+<div class="container" id="busca_personalizada">
+    <h2>Busca personalizada - <b class="text-success">GET</b></h2> 
+    <p> ENDPOINT: <a href="http://127.0.0.1:8000/student/?search={value}">http://127.0.0.1:8000/student/?search={value}</a></p>
+  <br>
+    <h5></h5>
+    <p>Para efetuar a busca personalizada, é necessário realizar a consulta utilizando "<i>QUERY STRING</i>".</p>
+    <p>A consulta será feita nos campos: <b>registration / first_name / last_name.</b></p>
+
+<div class="container">
+  <h3>Response</h3>
+  <div class="jumbotron">
+    [ br
+  { <br>
+      "id": 10, <br>
+      "registration": "17625124", <br>
+      "first_name": "João", <br>
+      "last_name": "Silva", <br>
+      "gender": "1", <br>
+      "date": "2022-07-04T22:49:39.824004Z", <br>
+      "is_active": true <br>
+  }, <br>
+
+  { <br>
+    "id": 10, <br>
+    "registration": "17625124", <br>
+    "first_name": "Joaquim", <br>
+    "last_name": "Silva", <br>
+    "gender": "1", <br>
+    "date": "2022-07-04T22:49:39.824004Z", <br>
+    "is_active": true <br>
+} <br>
+]
+  </div>
+
+</div>
+</body>
+</html>
