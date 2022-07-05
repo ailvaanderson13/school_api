@@ -15,7 +15,7 @@ INSTRUÇÕES:</br>
 ----3.1 - python -m venv venv.</br>
 ----3.2 - cd venv\Script.</br>
 ----3.3 - activate.</br>
-----3.4 - cd ..\..</br>
+----3.4 - retorne 2 (dois) niveis de pasta, até a pasta raiz do projeto.</br>
 </br>
 4 - INSTALE AS DEPENDÊNCIAS DO PROJETO;</br>
 ----4.1 - pip install -r requirements.txt</br>
