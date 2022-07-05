@@ -18,19 +18,14 @@ INSTRUÇÕES:</br>
 ----3.4 - cd ..\..</br>
 </br>
 4 - INSTALE AS DEPENDÊNCIAS DO PROJETO;</br>
-</br>
 ----4.1 - pip install -r requirements.txt</br>
 </br>
 5 - EXECUTE OS COMANDOS DE MIGRAÇÃO PARA MODELAR SEU BANCO DE DADOS;</br>
-</br>
 ----5.1 - python manage.py makemigrations.</br>
-</br>
 ----5.2 - python manage.py migrate.</br>
 </br>
 6 - EXECUTE SUA APLICAÇÃO DJANGO;</br>
-</br>
 ----6.1 - python manage.py runserver.</br>
-
 </br>
 
 LINKS IMPORTANTES:</br>
